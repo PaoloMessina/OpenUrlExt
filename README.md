@@ -18,20 +18,29 @@ This plugin is released under the MIT license
 Arguments:
 
 - **url**: The url too open, will be encoded.
-- **onSuccess**: function (s) {...} _Callback for successful scan._
-- **onFailure**: function (s) {...} _Callback for cancelled scan or error._
+- **onSuccess**: function () {...} _Callback for successful scan._
+- **onFailure**: function () {...} _Callback for cancelled scan or error._
 
 Return:
 
 - success() _Successful opening_
 - error() _Error on opening_
 
-Status:
+Example:
 
-- Android: DONE
-- iOS: DONE
+    ```javascript
+    {
+        OpenUrlExt.open(urlString,
+        				function(){ 
+        					console.log("ok");
+        				}, 
+        				function(){ 
+        					console.log("ko");
+        				});
+    }
+    ```
 
-Quirks:
+## Quirks:
 
 - __Android__: The plugin is not native but a simple call to javascript that just working well.
 

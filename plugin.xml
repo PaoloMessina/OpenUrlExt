@@ -15,6 +15,13 @@
     <js-module src="www/OpenUrlExt.js" name="OpenUrlExt">
         <clobbers target="OpenUrlExt" />
     </js-module>
+    
+    <!-- iOS -->
+  	<platform name="android">
+      	<js-module src="www/OpenUrlExt.js" name="OpenUrlExt">
+        	<runs/>
+      	</js-module>
+  	</platform>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">

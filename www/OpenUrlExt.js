@@ -23,7 +23,7 @@ OpenUrlExt.prototype = {
     			window.open(urlHashed, '_system');
     		}
     	} else {
-    		exec(success, failure, 'OpenUrlExt', 'open', url);
+    		exec(success, failure, 'OpenUrlExt', 'open', [url]);
     	}
     }
 };

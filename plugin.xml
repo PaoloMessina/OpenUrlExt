@@ -10,19 +10,20 @@
     <author>Paolo messina</author>
     <description>OpenUrlExt, light solution to open url externally in the hosting OS.</description>
     <license>MIT</license>
-    <keywords>url, open, external, safari, chrome</keywords>
+    <keywords>url, open, external, safari, chrome, ie, explorer</keywords>
 
     <js-module src="www/OpenUrlExt.js" name="OpenUrlExt">
         <clobbers target="OpenUrlExt" />
     </js-module>
     
-    <!-- iOS -->
+    <!-- Android -->
   	<platform name="android">
       	<js-module src="www/OpenUrlExt.js" name="OpenUrlExt">
         	<runs/>
       	</js-module>
   	</platform>
 
+	<!-- iOS -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="OpenUrlExt">
@@ -32,5 +33,12 @@
         <source-file src="ios/OpenUrlExt.m" />
         <header-file src="ios/OpenUrlExt.h" />
     </platform>
+    
+    <!-- windows -->
+  	<platform name="windows">
+		<js-module src="windows/OpenUrlExtProxy.js" name="OpenUrlExtProxy">
+	  		<merges target="" />
+		</js-module>
+  	</platform>
 
 </plugin>

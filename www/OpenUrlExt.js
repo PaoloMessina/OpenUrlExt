@@ -12,9 +12,13 @@ function OpenUrlExt () {};
 
 OpenUrlExt.prototype = {
 
-    open: function (url, success, failure)
+    open: function (url, success, failure, params)
     {
-    	var urlHashed = encodeURI(url);
+    	var urlHashed;
+    	if(params && params.encode == false)
+    		urlHashed = url;
+    	else 
+    		urlHashed = encodeURI(url);
     	var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
     	if(deviceType == "Android"){
     		if(navigator)

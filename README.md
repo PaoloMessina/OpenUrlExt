@@ -2,7 +2,8 @@
 Open a specific URL in the external browser of the hosting OS.
 
 ## Installation
-
+    cordova plugin add cordova-plugin-openurlext
+    OR
     cordova plugin add https://github.com/PaoloMessina/OpenUrlExt
 
 ## License

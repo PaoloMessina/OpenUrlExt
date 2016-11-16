@@ -44,4 +44,7 @@ Example:
 ## Quirks:
 
 - __Android__: The plugin is not native but a simple call to javascript that just working well.
-
+- __iOS__: The plugin calls success() when URL or app is opened, and error() in the following cases:
+	- URL is blank
+	- Custom URL is not available
+	- User cancels opening of custom URL

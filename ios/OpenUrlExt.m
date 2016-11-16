@@ -28,15 +28,7 @@
     NSString *urlString = [command.arguments objectAtIndex:0];
 
     if (urlString != nil && [urlString length] > 0) {
-        NSURL *url = [NSURL URLWithString:urlString];
-//        bool canOpen = [[UIApplication sharedApplication] canOpenURL:url];
-//        if (canOpen) {
-            [self launchUrl:urlString CDVcommand:command];
-//        } else {
-//            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-//                                                              messageAsString:[NSString stringWithFormat:@"Failure: %@ not available",urlString]];
-//            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-//        }
+        [self launchUrl:urlString CDVcommand:command];
     } else {
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
                                          messageAsString:@"No URL given"];

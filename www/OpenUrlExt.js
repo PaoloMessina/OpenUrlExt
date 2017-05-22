@@ -19,9 +19,11 @@ OpenUrlExt.prototype = {
     		urlHashed = url;
     	else 
     		urlHashed = encodeURI(url);
-    	var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
-    	if(deviceType == "Android"){
-    		if(navigator)
+    	var agent = navigator.userAgent.toLowerCase();
+        //need to exclude windows due to IE/EDGE userAgent spoofing
+    	var isAndroid = /android/.test(agent) && !/windows/.test(agent)
+    	if(isAndroid){
+    		if(navigator && navigator.app)
     			navigator.app.loadUrl(urlHashed, {openExternal : true});
     		else {
     			window.open(urlHashed, '_system');

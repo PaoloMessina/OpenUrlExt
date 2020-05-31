@@ -23,7 +23,7 @@ OpenUrlExt.prototype = {
         //need to exclude windows due to IE/EDGE userAgent spoofing
     	var isAndroid = /android/.test(agent) && !/windows/.test(agent)
     	if(isAndroid){
-    		if(navigator && navigator.app)
+    		if(navigator && navigator.app && navigator.app.loadUrl)
     			navigator.app.loadUrl(urlHashed, {openExternal : true});
     		else {
     			window.open(urlHashed, '_system');

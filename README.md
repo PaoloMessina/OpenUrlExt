@@ -29,17 +29,17 @@ Return:
 
 Example:
 
-    ```javascript
-    {
-        OpenUrlExt.open(urlString,
-        				function(){ 
-        					console.log("ok");
-        				}, 
-        				function(){ 
-        					console.log("ko");
-        				});
-    }
-    ```
+```javascript
+{
+OpenUrlExt.open(urlString,
+				function(){ 
+					console.log("ok");
+				}, 
+				function(){ 
+					console.log("ko");
+				});
+}
+```
 
 ## Quirks:
 
